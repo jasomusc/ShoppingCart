@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>About</h2>
+
+<h3>Documentation on how the task was tackled</h3>
+
+<div id="divAPI" class="row">
+    <h4>1 RESTful API</h4>
+    <ul>
+        <li>Design Database</li>
+        <li>Build Database</li>
+        <li>Connect to database using EntityFramework</li>
+        <li>Research on connecting to SQLITE using Entityframework (for some reason didn't work with .NET Framework 4.6 so had to switch project back to .NET Framework 4.5.2)</li>
+        <li>Develop class to log all errors in Error_Logging table</li>
+        <li>Develop API Methods</li>
+    </ul>
+</div>
+
+<br />
+
+<div id="divUnitTests" class="row">
+    <h4>2 Unit Tests</h4>
+    <ul>
+        <li>Add project for Unit Tests to solution</li>
+        <li>Develop Unit Test Methods</li>
+        <li>Research issue with database connection (result: needed to copy configSections, appsettings and connectionstrings tags from Web.config of API into App.config of Test Unit project)</li>
+        <li>Research issue with accepting HttpResponseMessage from TestMethod (result need to add { Request = new HttpRequestMessage() } when creating instead of Controller)</li>
+        <li>Test all API methods developed</li>
+    </ul>
+</div>
+
+<br />
+
+<div id="divWebInterface" class="row">
+    <h4>3 Web Interface</h4>
+    <ul>
+        <li>Add MVC Project default template to solution</li>
+        <li>Modify UI of Home page</li>
+        <li>Develop methods for Get Items and Get Cart Items methods</li>
+        <li>Develop methods for Add, Remove and Clear Items methods</li>
+        <li>Test Web Interface</li>
+        <li>Code cleaning</li>
+    </ul>
+</div>

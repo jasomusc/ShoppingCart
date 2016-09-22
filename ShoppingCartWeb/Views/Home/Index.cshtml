@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<script type="text/javascript">
+    var url = '@ViewData["API_URL"]';
+    var token = '@ViewData["Token"]';
+</script>
+
+<script src="~/Scripts/PageScripts/Home.js"></script>
+
+<div class="jumbotron">
+    <h1>Shopping Cart Demo</h1>
+    <p class="lead">Welcome to your Shopping Cart List</p>
+</div>
+
+<h2>Items in Stock</h2>
+
+<div id="divAllItemsLoading" class="row">Loading ...</div>
+<div id="divAllItems" class="row" hidden="hidden"></div>
+
+<h2>Shopping Cart</h2>
+<div id="divCartItemsLoading" class="row">Loading ...</div>
+<div id="divNoItems" class="row" hidden="hidden">
+    <h4>No Items in Cart</h4>
+</div>
+<div id="divCartItems" class="row" hidden="hidden">
+</div>
+
+<h4 style="float:left;">Number of Items: <label id="lblNumberOfItems"></label></h4>
+<h4 style="float:left;">Total Price: <label id="lblTotalPrice"></label></h4>
+
+<br /><br /><br />
+
+<div style="height:50px;">
+    <p style="float:left;"><button id="btnClearAll" type="button" class="btn btn-primary btn-lg" onclick="ClearAll()">Clear all Items in Cart</button></p>
+    <p style="float:right;"><button id="btnCheckout" type="button" class="btn btn-primary btn-lg" onclick="Checkout()">Checkout &raquo;</button></p>
+</div>
