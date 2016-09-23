@@ -1,7 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using ShoppingCartAPI.Controllers;
 using ShoppingCartAPI.Models;
 using ShoppingCartAPI.Utils;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 
@@ -30,14 +32,14 @@ namespace ShoppingCartAPI.Tests.Controllers
         }
 
         [TestMethod]
-        public void GetCartItem()
+        public void GetCartItems()
         {
             // Arrange
             CartItemController controller = new CartItemController { Request = new HttpRequestMessage() };
 
             // Act
             HttpResponseMessage result = controller.Get(Common.Token, 2);
-
+            
             // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
@@ -65,6 +67,9 @@ namespace ShoppingCartAPI.Tests.Controllers
             HttpResponseMessage result = controller.Delete(Common.Token, 6);
 
             // Assert
+            //Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
+
+            //Check not found because item to delete id needs to be change to test if delete works
             Assert.AreEqual(HttpStatusCode.NotFound, result.StatusCode);
         }
     }
