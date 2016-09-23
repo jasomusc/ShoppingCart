@@ -1,4 +1,4 @@
-# ShoppingCart - README
+# Shopping Cart - README
 
 -------------------------------------------
 Documentation on how the task has been tackled
